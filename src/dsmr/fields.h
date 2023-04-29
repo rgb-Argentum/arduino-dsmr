@@ -212,6 +212,7 @@ namespace dsmr
       static constexpr char MJ[] = "MJ";
       static constexpr char kvar[] = "kvar";
       static constexpr char kvarh[] = "kvarh";
+      static constexpr char Hz[] = "Hz";      
     };
 
     const uint8_t GAS_MBUS_ID = DSMR_GAS_MBUS_ID;
@@ -368,6 +369,51 @@ namespace dsmr
     /* Instantaneous reactive power L3 (-Q) in W resolution */
     DEFINE_FIELD(reactive_power_returned_l3, FixedValue, ObisId(1, 0, 64, 7, 0), FixedField, units::none, units::none);
 
+    /*
+ *Hungarian extensions 
+ */
+    /* COSEM logical device name */
+    DEFINE_FIELD(cosem_device_name, String, ObisId(0, 0, 42, 0, 0), StringField, 0, 40);
+    /* Device serial number */
+    DEFINE_FIELD(serial_number, String, ObisId(0, 0, 96, 1, 0), StringField, 0, 96);
+    /* Current tariff number */
+    DEFINE_FIELD(current_tariff, uint16_t, ObisId(0, 0, 96, 14, 0), IntField, units::none);
+    /* Circuit breaker status */
+    DEFINE_FIELD(circuit_breaker_state, String, ObisId(0, 0, 96, 50, 68), StringField, 2, 3);
+    /* Meter Reading electricity delivered to client (Tariff 3) in 0,001 kWh */
+    DEFINE_FIELD(energy_delivered_tariff3, FixedValue, ObisId(1, 0, 1, 8, 3), FixedField, units::kWh, units::Wh);
+    /* Meter Reading electricity delivered to client (Tariff 4) in 0,001 kWh */
+    DEFINE_FIELD(energy_delivered_tariff4, FixedValue, ObisId(1, 0, 1, 8, 4), FixedField, units::kWh, units::Wh);
+    /* Meter Reading electricity delivered by client (Tariff 3) in 0,001 kWh */
+    DEFINE_FIELD(energy_returned_tariff3, FixedValue, ObisId(1, 0, 2, 8, 3), FixedField, units::kWh, units::Wh);
+    /* Meter Reading electricity delivered by client (Tariff 4) in 0,001 kWh */
+    DEFINE_FIELD(energy_returned_tariff4, FixedValue, ObisId(1, 0, 2, 8, 4), FixedField, units::kWh, units::Wh);
+    /* Reactive energies QI-QIV in 0,001 kvarh */
+    DEFINE_FIELD(reactive_energy1, FixedValue, ObisId(1, 0, 5, 8, 0), FixedField, units::kvarh, units::kvarh);
+    DEFINE_FIELD(reactive_energy2, FixedValue, ObisId(1, 0, 6, 8, 0), FixedField, units::kvarh, units::kvarh);
+    DEFINE_FIELD(reactive_energy3, FixedValue, ObisId(1, 0, 7, 8, 0), FixedField, units::kvarh, units::kvarh);
+    DEFINE_FIELD(reactive_energy4, FixedValue, ObisId(1, 0, 8, 8, 0), FixedField, units::kvarh, units::kvarh);
+    /* Meter Reading electricity delivered to+from client in 0,001 kWh */
+    DEFINE_FIELD(energy_combined, FixedValue, ObisId(1, 0, 15, 8, 0), FixedField, units::kWh, units::Wh);
+    /* Meter Reading power factor (cosphi) */
+    DEFINE_FIELD(power_factor, FixedValue, ObisId(1, 0, 13, 7, 0), FixedField, units::none, units::none);
+    DEFINE_FIELD(power_factor_l1, FixedValue, ObisId(1, 0, 33, 7, 0), FixedField, units::none, units::none);
+    DEFINE_FIELD(power_factor_l2, FixedValue, ObisId(1, 0, 53, 7, 0), FixedField, units::none, units::none);
+    DEFINE_FIELD(power_factor_l3, FixedValue, ObisId(1, 0, 73, 7, 0), FixedField, units::none, units::none);
+    /* Meter Reading Frequency */
+    DEFINE_FIELD(frequency, FixedValue, ObisId(1, 0, 14, 7, 0), FixedField, units::Hz, units::Hz);
+    /* Reactive powers QI-QIV in 0,001 kvar */
+    DEFINE_FIELD(reactive_power1, FixedValue, ObisId(1, 0, 5, 7, 0), FixedField, units::kvar, units::kvar);
+    DEFINE_FIELD(reactive_power2, FixedValue, ObisId(1, 0, 6, 7, 0), FixedField, units::kvar, units::kvar);
+    DEFINE_FIELD(reactive_power3, FixedValue, ObisId(1, 0, 7, 7, 0), FixedField, units::kvar, units::kvar);
+    DEFINE_FIELD(reactive_power4, FixedValue, ObisId(1, 0, 8, 7, 0), FixedField, units::kvar, units::kvar);
+    /* Current limits in A */
+    DEFINE_FIELD(current_limit_l1, uint16_t, ObisId(1, 0, 31, 4, 0), IntField, units::A);
+    DEFINE_FIELD(current_limit_l2, uint16_t, ObisId(1, 0, 51, 4, 0), IntField, units::A);
+    DEFINE_FIELD(current_limit_l3, uint16_t, ObisId(1, 0, 71, 4, 0), IntField, units::A);
+    /* Last month stored values */
+    DEFINE_FIELD(last_month_packed_values, String, ObisId(0, 0, 98, 1, 0), StringField, 0, 1024);
+    
     /* Device-Type */
     DEFINE_FIELD(gas_device_type, uint16_t, ObisId(0, GAS_MBUS_ID, 24, 1, 0), IntField, units::none);
 
