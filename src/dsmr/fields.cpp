@@ -52,6 +52,7 @@ constexpr char units::GJ[];
 constexpr char units::MJ[];
 constexpr char units::kvar[];
 constexpr char units::kvarh[];
+constexpr char units::Hz[];
 
 constexpr ObisId identification::id;
 constexpr char identification::name[];
@@ -213,6 +214,86 @@ constexpr char reactive_power_returned_l2::name[];
 constexpr ObisId reactive_power_returned_l3::id;
 constexpr char reactive_power_returned_l3::name[];
 
+/* HUN */
+constexpr ObisId cosem_device_name::id;
+constexpr char cosem_device_name::name[];
+
+constexpr ObisId serial_number::id;
+constexpr char serial_number::name[];
+
+constexpr ObisId current_tariff::id;
+constexpr char current_tariff::name[];
+
+constexpr ObisId circuit_breaker_state::id;
+constexpr char circuit_breaker_state::name[];
+
+constexpr ObisId energy_delivered_tariff3::id;
+constexpr char energy_delivered_tariff3::name[];
+
+constexpr ObisId energy_delivered_tariff4::id;
+constexpr char energy_delivered_tariff4::name[];
+
+constexpr ObisId energy_returned_tariff3::id;
+constexpr char energy_returned_tariff3::name[];
+
+constexpr ObisId energy_returned_tariff4::id;
+constexpr char energy_returned_tariff4::name[];
+
+constexpr ObisId reactive_energy1::id;
+constexpr char reactive_energy1::name[];
+
+constexpr ObisId reactive_energy2::id;
+constexpr char reactive_energy2::name[];
+
+constexpr ObisId reactive_energy3::id;
+constexpr char reactive_energy3::name[];
+
+constexpr ObisId reactive_energy4::id;
+constexpr char reactive_energy4::name[];
+
+constexpr ObisId energy_combined::id;
+constexpr char energy_combined::name[];
+
+constexpr ObisId power_factor::id;
+constexpr char power_factor::name[];
+
+constexpr ObisId power_factor_l1::id;
+constexpr char power_factor_l1::name[];
+
+constexpr ObisId power_factor_l2::id;
+constexpr char power_factor_l2::name[];
+
+constexpr ObisId power_factor_l3::id;
+constexpr char power_factor_l3::name[];
+
+constexpr ObisId frequency::id;
+constexpr char frequency::name[];
+
+constexpr ObisId reactive_power1::id;
+constexpr char reactive_power1::name[];
+
+constexpr ObisId reactive_power2::id;
+constexpr char reactive_power2::name[];
+
+constexpr ObisId reactive_power3::id;
+constexpr char reactive_power3::name[];
+
+constexpr ObisId reactive_power4::id;
+constexpr char reactive_power4::name[];
+
+constexpr ObisId current_limit_l1::id;
+constexpr char current_limit_l1::name[];
+
+constexpr ObisId current_limit_l2::id;
+constexpr char current_limit_l2::name[];
+
+constexpr ObisId current_limit_l3::id;
+constexpr char current_limit_l3::name[];
+
+constexpr ObisId last_month_packed_values::id;
+constexpr char last_month_packed_values::name[];
+
+/* gas */
 constexpr ObisId gas_device_type::id;
 constexpr char gas_device_type::name[];
 
